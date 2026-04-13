@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary:   #FF6B35;
+  --color-secondary: #4ECDC4;
+  --color-success:   #51CF66;
+  --color-error:     #FF6B6B;
+  --color-warning:   #FFB347;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #FAFAFA;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+* { -webkit-tap-highlight-color: transparent; }
+
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
