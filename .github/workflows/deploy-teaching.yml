@@ -1,13 +1,9 @@
-name: Deploy Teaching App to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main, claude/memoni-learning-app-NQ5zz]
-    paths:
-      - 'apps/teaching/**'
-      - 'packages/shared/**'
-      - '.github/workflows/deploy-teaching.yml'
-  workflow_dispatch: # allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -42,11 +38,25 @@ jobs:
         env:
           VITE_BASE: /ghar-ji-gaal/
 
+      - name: Build collector app (demo mode)
+        run: npm run build
+        working-directory: apps/collector
+        env:
+          VITE_BASE: /ghar-ji-gaal/collector/
+          VITE_DEMO_MODE: "true"
+
+      - name: Combine build outputs
+        run: |
+          mkdir -p deploy
+          cp -r apps/teaching/dist/. deploy/
+          mkdir -p deploy/collector
+          cp -r apps/collector/dist/. deploy/collector/
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/teaching/dist
+          path: deploy
 
       - uses: actions/deploy-pages@v4
         id: deploy

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import { supabase } from '@ghar-ji-gaal/shared';
 import type { RequestType } from '@ghar-ji-gaal/shared';
@@ -25,7 +25,6 @@ const TYPE_META: Record<RequestType, { label: string; hint: string; placeholder:
 };
 
 export function NewRequestPage() {
-  const navigate = useNavigate();
   const [english, setEnglish] = useState('');
   const [context, setContext] = useState('');
   const [category, setCategory] = useState('');

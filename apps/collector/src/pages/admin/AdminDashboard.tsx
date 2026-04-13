@@ -3,10 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@ghar-ji-gaal/shared';
 import type { RequestStatus } from '@ghar-ji-gaal/shared';
 
-interface StatusCount {
-  status: RequestStatus;
-  count: number;
-}
 
 const STATUS_META: Record<RequestStatus, { label: string; emoji: string; color: string }> = {
   pending:      { label: 'Pending',      emoji: '⏳', color: 'text-gray-500 bg-gray-100' },
