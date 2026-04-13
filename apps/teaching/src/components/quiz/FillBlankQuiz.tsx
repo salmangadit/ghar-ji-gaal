@@ -1,4 +1,4 @@
-import { useState } from 'framer-motion';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { QuizQuestion } from '../../types/quiz';
 import { VOCAB_BY_ID } from '../../data/vocabulary';

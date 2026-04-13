@@ -3,7 +3,7 @@ import { TopBar } from '../components/layout/TopBar';
 import { LessonNode } from '../components/dashboard/LessonNode';
 import { useProfileStore } from '../store/profileStore';
 import { useProgressStore, getLevel } from '../store/progressStore';
-import { TOPICS, TOPICS_BY_ID, LESSONS, ORDERED_LESSONS } from '../data/topics';
+import { TOPICS, ORDERED_LESSONS } from '../data/topics';
 
 export function DashboardPage() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useRef } from 'react';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { TopBar } from '../components/layout/TopBar';
 import { AudioButton } from '../components/lesson/AudioButton';
@@ -138,7 +138,6 @@ function FileUploader({ word, onSaved }: { word: VocabWord; onSaved: () => void 
 }
 
 export function ParentPortalPage() {
-  const navigate = useNavigate();
   const audioManifest = useAudioStore((s) => s.audioManifest);
   const [expandedWord, setExpandedWord] = useState<string | null>(null);
   const [savedBadge, setSavedBadge] = useState<string | null>(null);
