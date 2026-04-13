@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary:   #FF6B35;
+  --color-secondary: #4ECDC4;
+  --color-success:   #51CF66;
+  --color-error:     #FF6B6B;
+  --color-xp:        #FFD43B;
+  --color-bg:        #FFF8F0;
+
+  /* Topic accent colours */
+  --topic-greetings:       #FBBF24; /* amber-400  */
+  --topic-family:          #F87171; /* rose-400   */
+  --topic-numbers-colours: #A78BFA; /* violet-400 */
+  --topic-food-home:       #34D399; /* emerald-400 */
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: var(--color-bg);
+}
+
+/* Safe-area aware padding helpers */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pt-safe { padding-top:    env(safe-area-inset-top);    }
+
+/* Tap highlight suppression on mobile */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Smooth iOS scroll */
+html { -webkit-overflow-scrolling: touch; }
